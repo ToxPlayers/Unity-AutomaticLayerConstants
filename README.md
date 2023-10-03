@@ -1,4 +1,4 @@
-# UnityLayersConstantsGenerator
+# UnityLayerConstantsGenerator
 Automatically generates a static class with all the layers as int constants with their mask.<br>
 After setting your layers, click under Tools/Generate Layer Constants<br>
 The class won't be generated and compiled if there aren't any changes to the layers.<br>

@@ -1,13 +1,11 @@
-#if UNITY_EDITOR
-using System;
-using System.CodeDom;
-using System.CodeDom.Compiler;
+#if UNITY_EDITOR 
 using System.Collections.Generic; 
 using System.IO;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
- 
+
+[InitializeOnLoad]
 static public class LayersCodeGenerator  
 { 
     static private string LayersFileName = @"Layers.cs";

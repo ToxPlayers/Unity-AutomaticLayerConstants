@@ -16,7 +16,7 @@ static public class LayersCodeGenerator
         var filePath = GetFilePath();
         if (string.IsNullOrEmpty(filePath))
         {
-            filePath = Application.dataPath + $"/{LayersFileName}.cs";
+            filePath = Application.dataPath + $"/{LayersFileName}";
             File.WriteAllText(filePath, "");
         }
 

@@ -1,4 +1,5 @@
 #if UNITY_EDITOR 
+using System;
 using System.Collections.Generic; 
 using System.IO;
 using UnityEditor;
@@ -25,10 +26,13 @@ static public class LayersCodeGenerator
         if (content != genContent)
         {
             File.WriteAllText(filePath, genContent);
-            AssetDatabase.ImportAsset(filePath, ImportAssetOptions.ForceUpdate);
+            var relativePath =
+                filePath.TrimStart(Application.dataPath.TrimEnd("Assets").ToCharArray());
+            AssetDatabase.ImportAsset(relativePath, ImportAssetOptions.ForceUpdate);
         }
+        GC.Collect();
     }
-     
+
     static string GetFilePath()
     {
         var assets = AssetDatabase.FindAssets("t:script Layers");

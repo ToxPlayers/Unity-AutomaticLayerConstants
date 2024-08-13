@@ -27,7 +27,7 @@ static public class LayersCodeGenerator
         {
             File.WriteAllText(filePath, genContent);
             var relativePath =
-                filePath.TrimStart(Application.dataPath.TrimEnd("Assets").ToCharArray());
+                filePath.TrimStart(Application.dataPath.TrimEnd("Assets".ToCharArray()).ToCharArray());
             AssetDatabase.ImportAsset(relativePath, ImportAssetOptions.ForceUpdate);
         }
         GC.Collect();
